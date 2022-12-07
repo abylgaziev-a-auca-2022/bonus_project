@@ -14,7 +14,6 @@ public class OrderDetailInfo {
 
     }
 
-    // Using for JPA/Hibernate Query.
     public OrderDetailInfo(String id, String productCode, //
                            String productName, int quanity, double price, double amount) {
         this.id = id;

@@ -19,7 +19,7 @@ public class PaginationResult<E> {
 
     private List<Integer> navigationPages;
 
-    // @page: 1, 2, ..
+    // Пагинация
     public PaginationResult(Query<E> query, int page, int maxResult, int maxNavigationPage) {
         final int pageIndex = page - 1 < 0 ? 0 : page - 1;
 
@@ -46,7 +46,7 @@ public class PaginationResult<E> {
 
             }
 
-            // Go to Last record.
+
             resultScroll.last();
         }
 
@@ -80,11 +80,11 @@ public class PaginationResult<E> {
         int begin = current - this.maxNavigationPage / 2;
         int end = current + this.maxNavigationPage / 2;
 
-        // The first page
+        // Первая страницы
         navigationPages.add(1);
         if (begin > 2) {
 
-            // Using for '...'
+            // Используется для '...'
             navigationPages.add(-1);
         }
 
@@ -96,10 +96,10 @@ public class PaginationResult<E> {
 
         if (end < this.totalPages - 2) {
 
-            // Using for '...'
+            // Используется для '...'
             navigationPages.add(-1);
         }
-        // The last page.
+        // Последняя страница
         navigationPages.add(this.totalPages);
     }
 

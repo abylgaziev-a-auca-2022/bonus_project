@@ -6,7 +6,7 @@ import javax.servlet.http.HttpServletRequest;
 
 public class Utils {
 
-    // Products in the cart, stored in Session.
+    // Продукты в корзине, хранящиеся в сеансе.
     public static CartInfo getCartInSession(HttpServletRequest request) {
 
         CartInfo cartInfo = (CartInfo) request.getSession().getAttribute("myCart");

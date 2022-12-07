@@ -74,13 +74,12 @@ public class OrderDAO {
             session.persist(detail);
         }
 
-        // Order Number!
+        // Номер заказа!
         cartInfo.setOrderNum(orderNum);
-        // Flush
         session.flush();
     }
 
-    // @page = 1, 2, ...
+    // Пагинация
     public PaginationResult<OrderInfo> listOrderInfo(int page, int maxResult, int maxNavigationPage) {
         String sql = "Select new " + OrderInfo.class.getName()//
                 + "(ord.id, ord.orderDate, ord.orderNum, ord.amount, "

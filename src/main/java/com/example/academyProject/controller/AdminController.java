@@ -49,7 +49,7 @@ public class AdminController {
         }
     }
 
-    // GET: Show Login Page
+    // GET: Отображение страницы логин.
     @RequestMapping(value = { "/admin/login" }, method = RequestMethod.GET)
     public String login(Model model) {
 
@@ -86,7 +86,7 @@ public class AdminController {
         return "orderList";
     }
 
-    // GET: Show product.
+    // GET: Показ продукта.
     @RequestMapping(value = { "/admin/product" }, method = RequestMethod.GET)
     public String product(Model model, @RequestParam(value = "code", defaultValue = "") String code) {
         ProductForm productForm = null;
@@ -105,7 +105,7 @@ public class AdminController {
         return "product";
     }
 
-    // POST: Save product
+    // POST: Сохранение продукта.
     @RequestMapping(value = { "/admin/product" }, method = RequestMethod.POST)
     public String productSave(Model model, //
                               @ModelAttribute("productForm") @Validated ProductForm productForm, //

@@ -45,14 +45,12 @@ public class MainController {
         }
         System.out.println("Target=" + target);
 
-        // Case update quantity in cart
-        // (@ModelAttribute("cartForm") @Validated CartInfo cartForm)
+
         if (target.getClass() == CartInfo.class) {
 
         }
 
-        // Case save customer information.
-        // (@ModelAttribute @Validated CustomerInfo customerForm)
+
         else if (target.getClass() == CustomerForm.class) {
             dataBinder.setValidator(customerFormValidator);
         }
@@ -125,7 +123,7 @@ public class MainController {
         return "redirect:/shoppingCart";
     }
 
-    // POST: Update quantity for product in cart
+    // POST: Обновление количества товара в корзине
     @RequestMapping(value = { "/shoppingCart" }, method = RequestMethod.POST)
     public String shoppingCartUpdateQty(HttpServletRequest request, //
                                         Model model, //
@@ -137,7 +135,7 @@ public class MainController {
         return "redirect:/shoppingCart";
     }
 
-    // GET: Show cart.
+    // GET: Показать корзину.
     @RequestMapping(value = { "/shoppingCart" }, method = RequestMethod.GET)
     public String shoppingCartHandler(HttpServletRequest request, Model model) {
         CartInfo myCart = Utils.getCartInSession(request);
@@ -146,7 +144,7 @@ public class MainController {
         return "shoppingCart";
     }
 
-    // GET: Enter customer information.
+    // GET: Ввод данных о клиенте.
     @RequestMapping(value = { "/shoppingCartCustomer" }, method = RequestMethod.GET)
     public String shoppingCartCustomerForm(HttpServletRequest request, Model model) {
 
@@ -165,7 +163,7 @@ public class MainController {
         return "shoppingCartCustomer";
     }
 
-    // POST: Save customer information.
+    // POST: Сохранить информацию о клиенте.
     @RequestMapping(value = { "/shoppingCartCustomer" }, method = RequestMethod.POST)
     public String shoppingCartCustomerSave(HttpServletRequest request, //
                                            Model model, //
@@ -175,7 +173,7 @@ public class MainController {
 
         if (result.hasErrors()) {
             customerForm.setValid(false);
-            // Forward to reenter customer info.
+            // Для повторного ввода информации о клиенте.
             return "shoppingCartCustomer";
         }
 
@@ -187,7 +185,7 @@ public class MainController {
         return "redirect:/shoppingCartConfirmation";
     }
 
-    // GET: Show information to confirm.
+    // GET: Показать информацию, чтобы подтвердить.
     @RequestMapping(value = { "/shoppingCartConfirmation" }, method = RequestMethod.GET)
     public String shoppingCartConfirmationReview(HttpServletRequest request, Model model) {
         CartInfo cartInfo = Utils.getCartInSession(request);
@@ -204,7 +202,7 @@ public class MainController {
         return "shoppingCartConfirmation";
     }
 
-    // POST: Submit Cart (Save)
+    // POST: Отправить корзину (Сохранить)
     @RequestMapping(value = { "/shoppingCartConfirmation" }, method = RequestMethod.POST)
 
     public String shoppingCartConfirmationSave(HttpServletRequest request, Model model) {
@@ -224,10 +222,10 @@ public class MainController {
             return "shoppingCartConfirmation";
         }
 
-        // Remove Cart from Session.
+        // Удалить корзину из сеанса.
         Utils.removeCartInSession(request);
 
-        // Store last cart.
+        // Сохранить последнюю корзину.
         Utils.storeLastOrderedCartInSession(request, cartInfo);
 
         return "redirect:/shoppingCartFinalize";

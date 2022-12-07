@@ -78,7 +78,7 @@ public class ProductDAO {
         if (isNew) {
             session.persist(product);
         }
-        // If error in DB, Exceptions will be thrown out immediately
+        // Ошибка в базе данных, эксепшены вылетят сразу
         session.flush();
     }
 
