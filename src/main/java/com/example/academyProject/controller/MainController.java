@@ -72,7 +72,7 @@ public class MainController {
         return "about";
     }
 
-    // Product List
+    // каталог товаров
     @RequestMapping({ "/productList" })
     public String listProductHandler(Model model, //
                                      @RequestParam(value = "name", defaultValue = "") String likeName,
