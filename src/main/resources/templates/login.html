@@ -9,10 +9,10 @@
 <th:block th:include="/_header"></th:block>
 <th:block th:include="/_menu"></th:block>
 
-<div class="page-title">Login (For Employee, Manager)</div>
+<div class="page-title">Авторизация (Работники, менеджеры)</div>
 
 <div class="login-container">
-    <h3>Enter username and password</h3>
+    <h3>Введите логин и пароль</h3>
     <br>
     <!-- /login?error=true -->
     <th:block th:if="${#session != null && #session.getAttribute('SPRING_SECURITY_LAST_EXCEPTION') != null}">
@@ -27,11 +27,11 @@
           th:action="@{/j_spring_security_check}">
         <table>
             <tr>
-                <td>User Name *</td>
+                <td>Имя пользователя *</td>
                 <td><input name="userName" /></td>
             </tr>
             <tr>
-                <td>Password *</td>
+                <td>Пароль *</td>
                 <td><input type="password" name="password" /></td>
             </tr>
             <tr>
@@ -48,7 +48,7 @@
 </div>
 
 <div style="text-align:left">
-    <h3>User/Password:</h3>
+    <h3>Пользователь/Пароль:</h3>
     <ul>
         <li>employee1/123</li>
         <li>manager1/123</li>

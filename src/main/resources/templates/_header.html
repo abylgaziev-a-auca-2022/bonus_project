@@ -5,6 +5,7 @@
     <style>
         .header-container{
             position: relative;
+            background-color: #ad8383;
         }
 
         .logo {
@@ -31,11 +32,11 @@
             Hello
             <a th:href="@{/admin/accountInfo}" th:utext="${#request.userPrincipal.name}">..</a>
             &nbsp;|&nbsp;
-            <a th:href="@{/admin/logout}">Logout</a>
+            <a th:href="@{/admin/logout}">Выйти</a>
         </th:block>
 
         <th:block sec:authorize="!isAuthenticated()">
-            <a th:href="@{/admin/login}">Login</a>
+            <a th:href="@{/admin/login}">Авторизация</a>
         </th:block>
     </div>
 </div>

@@ -91,16 +91,16 @@
 <div class="order_container">
 
     <div class="page-title">Order List</div>
-    <div>Total Order Count: <span th:utext="${paginationResult.totalRecords}"></span></div>
+    <div>Общее количество заказов: <span th:utext="${paginationResult.totalRecords}"></span></div>
     <table border="1" style="width:100%" class="order_table">
         <tr>
-            <th>Order Num</th>
-            <th>Order Date</th>
-            <th>Customer Name</th>
-            <th>Customer Address</th>
-            <th>Customer Email</th>
-            <th>Amount</th>
-            <th>View</th>
+            <th>Номер заказа</th>
+            <th>Дата</th>
+            <th>Имя заказчика</th>
+            <th>Адрес заказчика</th>
+            <th>Почта заказчика</th>
+            <th>Итог</th>
+            <th>Посмотреть</th>
         </tr>
         <tr th:each="orderInfo : ${paginationResult.list}">
             <td th:utext="${orderInfo.orderNum}"></td>

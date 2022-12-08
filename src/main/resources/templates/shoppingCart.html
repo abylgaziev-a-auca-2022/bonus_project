@@ -2,7 +2,7 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Shopping Cart</title>
+    <title>Корзина</title>
     <link rel="stylesheet" type="text/css" th:href="@{/styles.css}">
     <style>
         body {
@@ -90,30 +90,30 @@
                 <li><img class="product-image"
                          th:src="@{|/productImage?code=${cartLineInfo.productInfo.code}|}" />
                 </li>
-                <li>Code: <span th:utext="${cartLineInfo.productInfo.code}"></span>
+                <li>Код: <span th:utext="${cartLineInfo.productInfo.code}"></span>
                     <input type="hidden"
                            th:name="|cartLines[${varStatus.index}].productInfo.code|"
                            th:value="${cartLineInfo.productInfo.code}" />
                 </li>
-                <li>Name: <span th:utext="${cartLineInfo.productInfo.name}"></span></li>
-                <li>Price:
+                <li>Название: <span th:utext="${cartLineInfo.productInfo.name}"></span></li>
+                <li>Цена:
                     <span class="price"
                           th:utext="${#numbers.formatDecimal(cartLineInfo.productInfo.price,3,2,'COMMA')}">
                         </span>
                 </li>
-                <li>Quantity:
+                <li>Количество:
                     <input
                             th:name="|cartLines[${varStatus.index}].quantity|"
                             th:value="${cartLineInfo.quantity}" />
                 </li>
-                <li>Subtotal:
+                <li>Итог:
                     <span class="subtotal"
                           th:utext="${#numbers.formatDecimal(cartLineInfo.amount,3,2,'COMMA')}">
                         </span>
                 </li>
                 <li>
                     <a th:href="@{|/shoppingCartRemoveProduct?code=${cartLineInfo.productInfo.code}|}">
-                        Delete
+                        Удалить
                     </a>
                 </li>
             </ul>
@@ -122,9 +122,9 @@
         <div style="clear: both"></div>
         <input class="button-update-sc" type="submit" value="Update Quantity" />
         <a class="navi-item"
-           th:href="@{/shoppingCartCustomer}">Enter Customer Info</a>
+           th:href="@{/shoppingCartCustomer}">Ввести данные заказчика</a>
         <a class="navi-item"
-           th:href="@{/productList}">Continue Buy</a>
+           th:href="@{/productList}">Продолжить покупки</a>
     </form>
 </th:block>
 

@@ -21,6 +21,7 @@ public class Product implements Serializable {
     private double price;
 
     @Lob
+//    @Type (type="org.hibernate.type.PrimitiveByteArrayBlobType")
     @Column(name = "Image", length = Integer.MAX_VALUE, nullable = true)
     private byte[] image;
 

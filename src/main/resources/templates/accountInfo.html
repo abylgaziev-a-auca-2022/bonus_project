@@ -2,7 +2,7 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Account Info</title>
+    <title>Информация о аккаунте</title>
     <link rel="stylesheet" type="text/css" th:href="@{/styles.css}">
 </head>
 <body>
@@ -13,9 +13,9 @@
 <div class="page-title">Account Info</div>
 <div class="account-container">
     <ul>
-        <li>User Name: <span th:utext="${#request.userPrincipal.name}"></span></li>
+        <li>Имя пользователя: <span th:utext="${#request.userPrincipal.name}"></span></li>
         <li>
-            Role:
+            Роль:
             <ul>
                 <li th:each="auth : ${userDetails.authorities}" th:utext="${auth.authority}"></li>
             </ul>
