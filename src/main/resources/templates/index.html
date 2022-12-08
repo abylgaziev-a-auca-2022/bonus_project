@@ -4,13 +4,34 @@
     <meta charset="UTF-8">
     <title>Books Shop Online</title>
     <link rel="stylesheet" type="text/css" th:href="@{/styles.css}" />
+<!--    <link rel="stylesheet" type="text/css" th:href="@{/style.css}" />-->
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+        }
+        .header-container{
+            padding: 12px 24px;
+        }
+        .site-name{
+            margin: 0
+        }
+        .menu-container a:hover{
+            color: #D34E24;
+        }
+        .page-title{
+            font-size: 32px;
+            font-weight: 600;
+        }
+
+    </style>
 </head>
 <body>
 <th:block th:include="/_header"></th:block>
 <th:block th:include="/_menu"></th:block>
 
 <div class="page-title">Shopping Cart Demo</div>
-<div class="demo-container">
+<div class="demo-container bg-secondary">
     <h3>Demo content</h3>
     <ul>
         <li>Buy online</li>

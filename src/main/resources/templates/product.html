@@ -4,6 +4,80 @@
     <meta charset="UTF-8">
     <title>Product</title>
     <link rel="stylesheet" type="text/css" th:href="@{/styles.css}">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        .header-container {
+            padding: 12px 24px;
+        }
+
+        .site-name {
+            margin: 0
+        }
+
+        .menu-container a:hover {
+            color: #D34E24;
+        }
+
+        .page-title {
+            font-size: 32px;
+            font-weight: 600;
+        }
+
+        .product-preview-container {
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+            background-color: #fff7ef;
+        }
+
+        .buy_now {
+            background-color: #F28123;
+            display: inline-block;
+            padding: 6px 12px;
+            border-radius: 18px;
+            margin: 8px 0
+        }
+
+        .buy_now:hover {
+            background-color: #D34E24;
+        }
+
+        .buy_now a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .edit_poduct {
+            background-color: #38726C;
+            display: inline-block;
+            padding: 6px 12px;
+            border-radius: 18px;
+            margin: 8px 0
+        }
+
+        .edit_poduct:hover {
+            background-color: #38712C;
+        }
+
+        .edit_poduct a {
+            color: white;
+            text-decoration: none;
+        }
+        .product-image{
+            border-radius: 12px;
+        }
+        input{
+            padding: 8px 14px;
+            font-size: 18px;
+            border-radius: 22px;
+        }
+        .input_name{
+            font-size: 22px;
+            font-weight: 500;
+        }
+    </style>
 </head>
 <body>
 
@@ -18,7 +92,7 @@
        method="POST" enctype="multipart/form-data">
     <table style="text-align:left;">
         <tr>
-            <td>Code *</td>
+            <td class="input_name">Code *</td>
             <td style="color:red;">
                 <input th:field="*{newProduct}" type="hidden" />
                 <input th:if="${productForm.newProduct}" type="text"
@@ -33,28 +107,28 @@
             </td>
         </tr>
         <tr>
-            <td>Name *</td>
+            <td class="input_name">Name *</td>
             <td><input th:field="*{name}"  /></td>
             <td>
                 <span class="error-message" th:if="${#fields.hasErrors('name')}" th:errors="*{name}">..</span>
             </td>
         </tr>
         <tr>
-            <td>Price *</td>
+            <td class="input_name">Price *</td>
             <td><input th:field="*{price}"  /></td>
             <td>
                 <span class="error-message" th:if="${#fields.hasErrors('price')}" th:errors="*{price}">..</span>
             </td>
         </tr>
         <tr>
-            <td>Image</td>
+            <td class="input_name">Image</td>
             <td>
                 <img th:src="@{|/productImage?code=${productForm.code}|}" width="100"/>
             </td>
             <td> </td>
         </tr>
         <tr>
-            <td>Upload Image</td>
+            <td class="input_name">Upload Image</td>
             <td><input type="file" th:field="*{fileData}" /></td>
             <td> </td>
         </tr>

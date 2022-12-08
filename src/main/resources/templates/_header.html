@@ -2,8 +2,29 @@
 <div class="header-container"
      xmlns:th="http://www.thymeleaf.org"
      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+    <style>
+        .header-container{
+            position: relative;
+        }
 
-    <div class="site-name">Online Shop</div>
+        .logo {
+            width: 80px;
+            height: 50px;
+            position: absolute;
+            margin-left: 220px;
+            margin-bottom: 40px;
+            border: 1px solid white;
+            border-radius: 70%;
+        }
+        .aman{
+            text-decoration: none;
+            color: white;
+            font-family: Montserrat;
+            font-weight: 400;
+        }
+    </style>
+    <img class="logo" src="https://i.pinimg.com/originals/dd/64/da/dd64da585bc57cb05e5fd4d8ce873f57.png"/>
+    <div class="site-name" > <a class="aman" th:href="@{/}">Online Shop</a> </div>
 
     <div class="header-bar">
         <th:block sec:authorize="isAuthenticated()">

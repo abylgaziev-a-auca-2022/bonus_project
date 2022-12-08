@@ -67,6 +67,11 @@ public class MainController {
         return "index";
     }
 
+    @RequestMapping("/about")
+    public String about() {
+        return "about";
+    }
+
     // Product List
     @RequestMapping({ "/productList" })
     public String listProductHandler(Model model, //

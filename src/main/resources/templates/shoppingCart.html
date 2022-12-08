@@ -4,6 +4,71 @@
     <meta charset="UTF-8">
     <title>Shopping Cart</title>
     <link rel="stylesheet" type="text/css" th:href="@{/styles.css}">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        .header-container {
+            padding: 12px 24px;
+        }
+
+        .site-name {
+            margin: 0
+        }
+
+        .menu-container a:hover {
+            color: #D34E24;
+        }
+
+        .page-title {
+            font-size: 32px;
+            font-weight: 600;
+        }
+
+        .product-preview-container {
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+            background-color: #fff7ef;
+        }
+
+        .buy_now {
+            background-color: #F28123;
+            display: inline-block;
+            padding: 6px 12px;
+            border-radius: 18px;
+            margin: 8px 0
+        }
+
+        .buy_now:hover {
+            background-color: #D34E24;
+        }
+
+        .buy_now a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .edit_poduct {
+            background-color: #38726C;
+            display: inline-block;
+            padding: 6px 12px;
+            border-radius: 18px;
+            margin: 8px 0
+        }
+
+        .edit_poduct:hover {
+            background-color: #38712C;
+        }
+
+        .edit_poduct a {
+            color: white;
+            text-decoration: none;
+        }
+        .product-image{
+            border-radius: 12px;
+        }
+    </style>
 </head>
 <body>
 <th:block th:include="/_header"></th:block>
