@@ -14,15 +14,14 @@ public class Product implements Serializable {
     @Column(name = "Code", length = 20, nullable = false)
     private String code;
 
-    @Column(name = "Name", length = 255, nullable = false)
+    @Column(name = "Name", nullable = false)
     private String name;
 
     @Column(name = "Price", nullable = false)
     private double price;
 
     @Lob
-//    @Type (type="org.hibernate.type.PrimitiveByteArrayBlobType")
-    @Column(name = "Image", length = Integer.MAX_VALUE, nullable = true)
+    @Column(name = "Image", length = Integer.MAX_VALUE)
     private byte[] image;
 
     @Temporal(TemporalType.TIMESTAMP)
@@ -71,5 +70,4 @@ public class Product implements Serializable {
     public void setImage(byte[] image) {
         this.image = image;
     }
-
 }

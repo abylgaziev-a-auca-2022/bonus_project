@@ -24,8 +24,6 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     public void configure(AuthenticationManagerBuilder auth) throws Exception {
 
-        // Setting Service to find User in the database.
-        // And Setting PassswordEncoder
         auth.userDetailsService(userDetailsService).passwordEncoder(passwordEncoder());
 
     }
@@ -35,20 +33,17 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
         http.csrf().disable();
 
-        // Requires login with role ROLE_EMPLOYEE or ROLE_MANAGER.
-        // If not, it will redirect to /admin/login.
+        // Нужна роль ROLE_EMPLOYEE или ROLE_MANAGER.
+        // Если не эти роли, то перенаправление на  /admin/login.
         http.authorizeRequests().antMatchers("/admin/orderList", "/admin/order", "/admin/accountInfo")//
                 .access("hasAnyRole('ROLE_EMPLOYEE', 'ROLE_MANAGER')");
 
-        // Pages only for MANAGER
+        // Страницы для менеджера
         http.authorizeRequests().antMatchers("/admin/product").access("hasRole('ROLE_MANAGER')");
 
-        // When user login, role XX.
-        // But access to the page requires the YY role,
-        // An AccessDeniedException will be thrown.
         http.authorizeRequests().and().exceptionHandling().accessDeniedPage("/403");
 
-        // Configuration for Login Form.
+        // Конфигурации для формы авторизации
         http.authorizeRequests().and().formLogin()//
 
                 //

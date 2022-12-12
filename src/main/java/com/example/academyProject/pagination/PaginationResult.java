@@ -33,7 +33,6 @@ public class PaginationResult<E> {
         boolean hasResult = resultScroll.first();
 
         if (hasResult) {
-            // Scroll to position:
             hasResult = resultScroll.scroll(fromRecordIndex);
 
             if (hasResult) {
@@ -50,7 +49,7 @@ public class PaginationResult<E> {
             resultScroll.last();
         }
 
-        // Total Records
+
         this.totalRecords = resultScroll.getRowNumber() + 1;
         this.currentPage = pageIndex + 1;
         this.list = results;
@@ -80,7 +79,7 @@ public class PaginationResult<E> {
         int begin = current - this.maxNavigationPage / 2;
         int end = current + this.maxNavigationPage / 2;
 
-        // Первая страницы
+        // Первая страница
         navigationPages.add(1);
         if (begin > 2) {
 

@@ -16,7 +16,6 @@ public class ProductInfo {
         this.price = product.getPrice();
     }
 
-    // Using in JPA/Hibernate query
     public ProductInfo(String code, String name, double price) {
         this.code = code;
         this.name = name;

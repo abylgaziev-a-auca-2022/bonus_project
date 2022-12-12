@@ -5,10 +5,6 @@
     <title>Корзина</title>
     <link rel="stylesheet" type="text/css" th:href="@{/styles.css}">
     <style>
-        body {
-            margin: 0;
-            padding: 0;
-        }
 
         .header-container {
             padding: 12px 24px;
@@ -74,11 +70,11 @@
 <th:block th:include="/_header"></th:block>
 <th:block th:include="/_menu"></th:block>
 
-<div class="page-title">My Cart</div>
+<div class="page-title">Корзина</div>
 
 <th:block th:if="${cartForm == null || cartForm.cartLines == null || cartForm.cartLines.empty}">
-    <h2>There is no items in Cart</h2>
-    <a th:href="@{/productList}">Show Product List</a>
+    <h2>Корзина пуста</h2>
+    <a th:href="@{/productList}">Показать каталог</a>
 </th:block>
 
 <th:block th:if="${cartForm != null && cartForm.cartLines != null && !cartForm.cartLines.empty}">

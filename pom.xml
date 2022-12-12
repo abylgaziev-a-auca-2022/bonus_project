@@ -15,6 +15,7 @@
 	<description>project for courses</description>
 	<properties>
 		<java.version>1.8</java.version>
+		<property name="hibernate.jdbc.use_streams_for_binary" value="true"/>
 	</properties>
 	<dependencies>
 		<dependency>
